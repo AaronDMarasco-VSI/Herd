@@ -98,7 +98,7 @@ def run(local_file, remote_file, hosts):
     t = threading.Thread(target=track)
     t.daemon = True
     t.start()
-    local_host = (local_ip(), opts['port'])
+    local_host = (opts['interface'], opts['port'])
     log.info("Creating torrent (host %s:%s)..." % local_host)
     torrent_file = mktorrent(local_file, '%s:%s' % local_host)
     log.info("Seeding %s" % torrent_file)
@@ -202,7 +202,7 @@ def mktorrent(file_name, tracker):
 
 
 def track():
-    bttrack.track(["--dfile", opts['data_file'], "--port", opts['port']])
+    bttrack.track(["--dfile", opts['data_file'], "--port", opts['port'], '--bind', opts['interface']])
 
 
 def seed(torrent, local_file):
@@ -279,6 +279,10 @@ def entry_point():
                         help="Port number to run the tracker on. Port range " +
                         "for random port selection also allowed (e.g. 8000-9000).")
 
+    parser.add_argument('--interface',
+                        default="0.0.0.0",
+                        help="Network interface address (IP) to run the tracker on")
+
     parser.add_argument('--remote-path',
                         default='/tmp/herd',
                         help="Temporary path to store uploads")
@@ -302,7 +306,7 @@ def entry_point():
     opts = vars(parser.parse_args())
 
     # potentially select a random port
-    opts['port'] = get_random_open_port(opts['port'])
+    opts['port'] = get_random_open_port(opts['port'], opts['interface'])
 
     if opts['seed']:
         seed(opts['local-file'], opts['remote-file'])
