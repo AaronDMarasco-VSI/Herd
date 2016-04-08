@@ -1,1 +1,3 @@
-recursive-include *.tar.gz
+# recursive-include *.tar.gz
+include herd/bittornado.tar.gz
+include README.md
