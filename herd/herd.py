@@ -293,7 +293,7 @@ def entry_point():
 
     parser.add_argument('--hostlist',
                         default=False,
-                        help="Comma separated list of hots")
+                        help="Comma separated list of hosts")
 
     parser.add_argument('--seed',
                         default=False,
