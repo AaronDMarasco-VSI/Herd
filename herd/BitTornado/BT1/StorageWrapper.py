@@ -1,12 +1,12 @@
 # Written by Bram Cohen
 # see LICENSE.txt for license information
 
-from herd.BitTornado.bitfield import Bitfield
+from .. bitfield import Bitfield
 try:
     from hashlib import sha1 as sha
 except ImportError:
     from sha import sha
-from herd.BitTornado.clock import clock
+from .. clock import clock
 from traceback import print_exc
 from random import randrange
 try:

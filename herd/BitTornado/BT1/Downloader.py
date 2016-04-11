@@ -1,10 +1,10 @@
 # Written by Bram Cohen
 # see LICENSE.txt for license information
 
-from herd.BitTornado.CurrentRateMeasure import Measure
-from herd.BitTornado.bitfield import Bitfield
+from .. CurrentRateMeasure import Measure
+from .. bitfield import Bitfield
 from random import shuffle
-from herd.BitTornado.clock import clock
+from .. clock import clock
 try:
     True
 except:

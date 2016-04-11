@@ -1,13 +1,13 @@
 # Written by John Hoffman
 # see LICENSE.txt for license information
 
-from herd.BitTornado.CurrentRateMeasure import Measure
+from .. CurrentRateMeasure import Measure
 from random import randint
 from urlparse import urlparse
 from httplib import HTTPConnection
 from urllib import quote
 from threading import Thread
-from herd.BitTornado.__init__ import product_name,version_short
+from .. __init__ import product_name,version_short
 try:
     True
 except:

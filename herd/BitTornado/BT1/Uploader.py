@@ -1,7 +1,7 @@
 # Written by Bram Cohen
 # see LICENSE.txt for license information
 
-from herd.BitTornado.CurrentRateMeasure import Measure
+from .. CurrentRateMeasure import Measure
 
 try:
     True

@@ -2,7 +2,7 @@
 # see LICENSE.txt for license information
 
 from random import randrange, shuffle
-from herd.BitTornado.clock import clock
+from .. clock import clock
 try:
     True
 except:

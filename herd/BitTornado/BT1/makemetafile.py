@@ -10,7 +10,7 @@ except ImportError:
     from sha import sha
 from copy import copy
 from string import strip
-from herd.BitTornado.bencode import bencode
+from .. bencode import bencode
 from btformats import check_info
 from threading import Event
 from time import time
