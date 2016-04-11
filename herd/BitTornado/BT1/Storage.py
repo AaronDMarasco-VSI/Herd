@@ -1,7 +1,7 @@
 # Written by Bram Cohen
 # see LICENSE.txt for license information
 
-from herd.BitTornado.piecebuffer import BufferPool
+from .. piecebuffer import BufferPool
 from threading import Lock
 from time import time, strftime, localtime
 import os
